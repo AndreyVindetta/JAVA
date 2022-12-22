@@ -1,0 +1,105 @@
+package ru.mirea.pr1;
+import java.util.Scanner;
+public class Main
+{
+    public static void rabota_1()
+    {
+        Scanner in = new Scanner(System.in);
+        int [] arr = new int[10];
+        int sum = 0;
+        double sr_znach;
+        System.out.println("Введите 10 элемнтов массива: ");
+        for (int i = 0; i < 10; i++)
+        {
+            arr[i] = in.nextInt();
+            sum += arr[i];
+        }
+        sr_znach = sum / 10.0;
+        System.out.println("Сумма элементов массива: " + sum);
+        System.out.println("Среднее арифметическое значение элементов: " + sr_znach);
+    }
+    public static void rabota_2()
+    {
+        Scanner in = new Scanner(System.in);
+        int[] arr = new int[10];
+        int sum = 0, i = 0, min = 0, max = 0;
+        System.out.print("Введите 10 элементов массива: ");
+        do {
+            arr[i] = in.nextInt();
+            sum += arr[i];
+            i++;
+        } while (i < 10);
+
+        i = 0;
+        min = arr[0];
+        while (i < 10) {
+            if (min > arr[i])
+                min = arr[i];
+            if (max < arr[i])
+                max = arr[i];
+            i++;
+        }
+        System.out.println("Сумма " + sum);
+        System.out.println("Минималка " + min);
+        System.out.println("Максималка " + max);
+    }
+    public static void rabota_3(String[] args)
+    {
+        for(int i = 0; i < args.length; i++)
+        {
+            System.out.print(args[i]);
+        }
+    }
+    public static void rabota_4()
+    {
+        System.out.println("Первые десять чисел гармонического ряда ");
+        for(int i = 1; i < 11; i++)
+        {
+            System.out.println("1/" + i);
+        }
+    }
+    public static void rabota_5()
+    {
+        Scanner in = new Scanner(System.in);
+        int a = 0;
+        int factorial = 1;
+        System.out.println("Введите число ");
+        a = in.nextInt();
+        for(int i = 1; i < a + 1; i++)
+        {
+            factorial *= i;
+        }
+        System.out.println("Результат " + factorial + "\n");
+    }
+    public static void main(String[] args)
+    {
+        int upr = -1;
+        while(upr != 0) {
+            System.out.println("Введите номер упражеения (1-5): ");
+            Scanner in = new Scanner(System.in);
+            upr = in.nextInt();
+            switch (upr) {
+                case 1: {
+                    rabota_1();
+                    break;
+                }
+                case 2: {
+                    rabota_2();
+                    break;
+                }
+                case 3: {
+                    rabota_3(args);
+                    break;
+                }
+                case 4: {
+                    rabota_4();
+                    break;
+                }
+                case 5: {
+                    rabota_5();
+                    break;
+                }
+            }
+        }
+    }
+}
